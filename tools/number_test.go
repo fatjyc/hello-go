@@ -1,6 +1,7 @@
 package tools_test
 
 import (
+	"github.com/stretchr/testify/assert"
 	"testing"
 
 	"github.com/fatjyc/hello-go/tools"
@@ -20,7 +21,7 @@ func TestIsOdd(t *testing.T) {
 
 	for _, test := range tests {
 		if result := tools.IsOdd(test.input); result != test.expected {
-			t.Errorf("IsOdd(%d) = %v; want %v", test.input, result, test.expected)
+			assert.Equal(t, test.expected, result, "IsOdd(%d) = %v; want %v", test.input, result, test.expected)
 		}
 	}
 }
@@ -40,7 +41,7 @@ func TestIsEven(t *testing.T) {
 
 	for _, test := range tests {
 		if result := tools.IsEven(test.input); result != test.expected {
-			t.Errorf("IsEven(%d) = %v; want %v", test.input, result, test.expected)
+			assert.Equal(t, test.expected, result, "IsEven(%d) = %v; want %v", test.input, result, test.expected)
 		}
 	}
 }
@@ -63,7 +64,7 @@ func TestIsPrime(t *testing.T) {
 
 	for _, test := range tests {
 		if result := tools.IsPrime(test.input); result != test.expected {
-			t.Errorf("IsPrime(%d) = %v; want %v", test.input, result, test.expected)
+			assert.Equal(t, test.expected, result, "IsPrime(%d) = %v; want %v", test.input, result, test.expected)
 		}
 	}
 }
