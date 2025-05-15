@@ -15,7 +15,7 @@ func NewGreeter(lang string, name string) *Greeter {
 func (g *Greeter) Greet() string {
 	greeting := Languages(g.Language)
 	if g.Name == "" {
-		return fmt.Sprintf("%s, World!", greeting)
+		return fmt.Sprintf("%s, World!！", greeting)
 	}
 	return fmt.Sprintf("%s, %s![%s]", greeting, g.Name, tools.Reverse(g.Name))
 }
